@@ -1,0 +1,34 @@
+<p>ordermenu works!</p>
+<div class="container">
+    <ng-container *ngIf="!orders; else ordertemp">
+        <div class="alert alert-danger">
+            <h4>No any order yet !</h4>
+        </div>
+    </ng-container>
+    <ng-template #ordertemp>
+    <div class="row">
+        <div class="col-4  pt-3" *ngFor="let ord of orders">
+            <div class="card">
+                <div class="card-header" style="background-color: lightseagreen;">Order Details</div>
+                <div class="card-body" style="background-color: lightgrey;">
+                    <table>
+                        <tr>
+                            <td><label for="">Customer :</label></td><td>{{ord.customer}}</td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Item :</label></td><td>{{ord.item}}</td>
+                        </tr>
+                        <tr>
+                            <td><label for="">Order time :</label></td><td>{{ord.time|date:'short'}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-danger" (click)="RemoveOrder(ord.id)">Remove Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </ng-template>
+    </div>

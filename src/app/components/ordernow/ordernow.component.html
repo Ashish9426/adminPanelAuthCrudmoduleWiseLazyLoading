@@ -1,0 +1,34 @@
+<p>ordernow works!</p>
+<div class="row">
+
+    <div class="col-4 offset-3 pt-4" style="margin-bottom: 220px;">
+        <div class="card" style="margin-top: 60px;">
+          <div class="card-header btn-info">
+              <h4>Order Now</h4>
+          </div>
+          <div class="card-body" style="background-color:lightgreen;">
+              <form (ngSubmit) = "submit()" [formGroup]="orderdata">
+              <div class="form-group">
+                  <select name="item" id="" class="form-control" formControlName="item">
+                    <option value="">Select Item</option>
+                    <option value="Pizza">Pizza</option>
+                    <option value="Burger">Burger</option>
+                    <option value="Samosa">Samosa</option>
+                </select>
+              </div>
+              <div class="form-group">
+                  <label for="">Customer Name</label>
+                  <input type="text" class="form-control" formControlName="customer">
+              </div>
+
+              <div class="form-group pt-3">
+                  <button class="btn btn-info" >Place Order</button>
+                  <!-- <button class="btn btn-danger">Cancel Order</button> -->
+              </div>
+
+            </form>
+          </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,31 @@
+<!-- <router-outlet></router-outlet>-->
+
+<div class="sidenav" *ngIf="loggedInUser">
+    <a href="" routerLink="dashboard/ordermenu">Show Orders</a>
+    <a href="" routerLink="dashboard/ordernow">Creat Orders</a>
+  
+   <div class="box">
+        <a class="already" href="" (click)="logout()"><fa-icon [icon]="faSignOutAlt"></fa-icon> Logout</a> 
+    </div>
+    
+</div>
+  
+  
+<div *ngIf="loggedInUser" class="container" style="margin-left: 15%; position: relative;">
+    <div class="header bg-warning">
+        <img [src]="src1" width="150" height="109" alt="Company-logo" >
+
+        <div class="nav">
+            <ul>
+                <a href="" >Welcome {{nn}}</a>
+                <fa-icon [icon]="faGrin" style="color: Tomato;"></fa-icon>
+            </ul>
+        </div>
+    </div>
+    <h4 style="background-color: rgb(236, 52, 82); text-align: center;">Welcome to Admin Panel</h4>
+</div>
+
+<div class="main" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZtlRpwnLl-e7h2E1xS2LNI-irJGx7QxO7CA&usqp=CAU');" >
+
+    <router-outlet></router-outlet>
+</div>

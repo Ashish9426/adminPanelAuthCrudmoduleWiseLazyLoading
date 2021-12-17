@@ -1,0 +1,68 @@
+
+   .sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:rgba(1, 1, 65, 0.904);
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    color: rgb(115, 253, 1);
+    display: block;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: white;
+  }
+  
+  .main {
+    margin-left: 160px;
+    font-size: 20px; 
+    padding: 0px 10px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  } 
+
+  .img-circle{
+    height: 152px;
+    width: 98%;
+    border-radius: 50%;
+    background-position: top;
+    margin-top: 0rem;
+  }
+
+  .box{
+    margin-bottom: 0%;
+  }
+.header{
+  height: 109px;
+  /* background-color: rgb(253, 110, 57); */
+}
+.nav ul a {
+  padding: 4px;
+  color: #fff;
+  margin-left: 506px;
+  text-decoration: none;
+}
+.nav{
+  position: relative;
+  margin-left: 22%;
+  top: -80px;
+}
+.nav ul a:hover{
+  cursor: pointer;
+}

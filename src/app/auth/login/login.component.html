@@ -1,0 +1,62 @@
+<body>
+    <div class="row">
+
+        <div class="col-6"
+            style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwQ2q2o4N_fHms10wH4vrcLpg5xL5OQoO3dw&usqp=CAU');">
+
+        </div>
+
+        <div class="col-6"
+            style="background-image: url('https://images.unsplash.com/photo-1589010588553-46e8e7c21788?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZCUyMGRlbGl2ZXJ5fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80');">
+
+            <div class="container">
+                <div class="row pt-5" style="margin-bottom: 220px;">
+                    <div class="col-6 offset-3">
+                        <div class="card" style="margin-top: 60px;">
+                            <div class="card-header">
+                                <h4>Login here</h4>
+                            </div>
+                            <div class="card-body bg-info">
+                                <form (ngSubmit)="submit()" [formGroup]="formdata">
+                                    <div class="form-group pt-3">
+                                        <label for="">User Id</label>
+                                        <input type="text" class="form-control" name="userid" formControlName="userid">
+
+                                        <div class="text-danger"
+                                            *ngIf="formdata.controls.userid.errors?.required && formdata.controls.userid.touched">
+                                            User Id required !</div>
+                                    </div>
+
+                                    <div class="form-group pt-3">
+                                        <label for="">Password</label>
+                                        <input type="password" class="form-control" name="password"
+                                            formControlName="password">
+
+                                        <div class="text-danger"
+                                            *ngIf="formdata.controls.password.errors?.required && formdata.controls.password.touched">
+                                            Password required !</div>
+                                    </div>
+
+                                    <div class="form-group pt-3">
+                                        <input type="submit" class="btn btn-success" name="btn"
+                                            [disabled]="!formdata.valid">
+                                    </div>
+                                    <div class="form-group pt-3">
+                                        <div class="text-danger">
+                                            {{errormessage}}
+                                        </div>
+                                    </div>
+                                    Looking to<a class="already" href="#" routerLink="/auth/register"> create an
+                                        account</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>

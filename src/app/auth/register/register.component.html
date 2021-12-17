@@ -1,0 +1,130 @@
+<body>
+
+    <div class="container">
+        <div class="row pt-3">
+            <div class="col-6 offset-3 ">
+                <div class="card">
+    
+                    <div class="card-header pt-3 bg-warning">
+                        <h4>Signup here</h4>
+                    </div>
+    
+                    <div class="cord-body bg-dark">
+                        <form (ngSubmit)="submit()" [formGroup]="formdata">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="fname"><fa-icon [icon]="faUser"></fa-icon></span>
+                                            <input type="text" class="form-control" placeholder="Enter your first name" formControlName="fname">
+                                        </div>
+                                        <div class="text-danger" *ngIf="formdata.controls.fname.errors?.required && formdata.controls.fname.touched">First Name required !</div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="lname"><fa-icon [icon]="faUser"></fa-icon></span>
+                                            <input type="text" class="form-control" placeholder="Enter your last name" formControlName="lname">
+                                        </div>
+                                        <div class="text-danger" *ngIf="formdata.controls.lname.errors?.required && formdata.controls.lname.touched">Last Name required !</div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="form-group pt-3">
+                                <div class="input-group">
+                                    <span class="input-group-text" id="age">@</span>
+                                    <input type="text" class="form-control" placeholder="Enter your Age" formControlName="age">
+                                </div>
+                                <div class="text-danger" *ngIf="formdata.controls.age.errors?.required && formdata.controls.age.touched">Age required !</div>
+                            </div>
+    
+                            <div class="form-group pt-3">
+                                <div class="input-group">
+                                    <span class="input-group-text" id="gender"><fa-icon [icon]="faVenusMars"></fa-icon></span>
+                                    <select name="gender" id="gender" class="form-control" formControlName="gender" formControlName="gender">
+                                        <option selected disabled value="">Choose Your Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                </div>
+                                <div class="text-danger" *ngIf="formdata.controls.gender.errors?.required && formdata.controls.gender.touched">Gender required !</div>
+                            </div>
+    
+                            <div class="form-group pt-3">
+                                <div class="input-group">
+                                    <span class="input-group-text" id="email"><fa-icon [icon]="faEnvelopeSquare"></fa-icon></span>
+                                    <input type="email" class="form-control" placeholder="Enter your email id" formControlName="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+                                </div>
+                                <div class="text-danger" *ngIf="formdata.controls.email.errors?.required && formdata.controls.email.touched">Email Id required !</div>
+                                <div class="text-danger" *ngIf="!formdata.controls.email.errors?.required && formdata.controls.email.touched && formdata.controls.email?.invalid">Email is Invalid !</div>
+                            </div>
+    
+                            <div class="form-group pt-3">
+                                <div class="input-group">
+                                    <span class="input-group-text" id="mobile"><fa-icon [icon]="faMobileAlt"></fa-icon></span>
+                                    <input type="mobile" class="form-control" placeholder="Enter your mobile number" formControlName="mobile" required pattern="[789][0-9]{9}">
+                                </div>
+                                <div class="text-danger" *ngIf="formdata.controls.mobile.errors?.required && formdata.controls.mobile.touched">Mobile number required !</div>
+                                <div class="text-danger" *ngIf="!formdata.controls.mobile.errors?.required && formdata.controls.mobile.touched && formdata.controls.mobile?.invalid">
+                                    Mobile is not valid !
+                                </div>
+                            </div>
+    
+                            <div class="form-group pt-3">
+                                <div class="input-group">
+                                    <span class="input-group-text" id="pass"><fa-icon [icon]="faBuilding"></fa-icon></span>
+                                    <select name="department" id="dept" class="form-control" formControlName="department" formControlName="department">
+                                        <option selected disabled value="">Select Department</option>
+                                        <option value="IT">IT</option>
+                                        <option value="HR">HR</option>
+                                        <option value="SALES">SALES</option>
+                                        <option value="ADMIN">ADMIN</option>
+                                        <option value="ACCOUNT">ACCOUNT</option>
+                                    </select>
+                                </div>
+                                <div class="text-danger" *ngIf="formdata.controls.department.errors?.required && formdata.controls.department.touched">Department required !</div>
+                            </div>
+    
+                            <div class="form-group pt-3">
+                                <div class="input-group">
+                                    <span class="input-group-text" id="pass"><fa-icon [icon]="faUserLock"></fa-icon></span>
+                                    <input type="password" class="form-control" placeholder="Enter Your Password" formControlName="password" required pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{6,}$">
+                                </div>
+                                <div class="text-danger" *ngIf="formdata.controls.password.errors?.required && formdata.controls.password.touched">Password required !</div>
+                                <div class="text-danger" *ngIf="!formdata.controls.password.errors?.required && formdata.controls.password.touched && formdata.controls.password?.invalid">
+                                    Password should be A-Z && a-z && 0-9 && min one special && min 6 char !
+                                </div>
+                            </div>
+    
+                            <div class="form-group pt-3">
+                                <div class="input-group">
+                                    <span class="input-group-text" id="cpass"><fa-icon [icon]="faUserLock"></fa-icon></span>
+                                    <input type="password" class="form-control" placeholder="Confirm Password" formControlName="cpassword">
+                                </div>
+                                <div class="text-danger" *ngIf="formdata.controls.cpassword.errors?.required && formdata.controls.cpassword.touched">Confirm Password required !</div>
+                                <div class="text-danger" *ngIf="formdata.hasError('notSame') && formdata.controls.cpassword.touched">Passwords do not match</div>
+                            </div>
+    
+                            <div class="form-group pt-3">
+                                <label for="" style="color: white;">Address</label>
+                              <textarea class="form-control" name="address" formControlName="address"></textarea>
+                              <div class="text-danger" *ngIf="formdata.controls.address.errors?.required && formdata.controls.address.touched">Address required !</div>
+                            </div>
+    
+                            <div class="form-group pt-3" style="color: white;">
+                                <div class="input-group">
+                                    <button class="btn btn-success" [disabled]=!formdata.valid>Submit</button>
+                                </div>
+                                Already have an account<a class="already" href="#" routerLink="/auth/login" > Login here</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </body>
